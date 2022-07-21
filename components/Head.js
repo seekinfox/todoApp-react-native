@@ -2,8 +2,8 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
-import CButton from '../common/CButton';
-import Colors from '../../utils/colors';
+import CButton from './common/CButton';
+import Colors from '../utils/colors';
 
 export default function Head() {
   return (
@@ -31,10 +31,10 @@ export default function Head() {
 
 const styles = StyleSheet.create({
    headContainer: {
-      borderWidth: 2,
       flexDirection: 'row',
       paddingHorizontal: 10,
-      paddingTop: '15%' 
+      paddingTop: '15%',
+      paddingBottom: 10, 
       },
    head__innerOne: {
       flex: 2,

@@ -3,7 +3,7 @@ const Colors = {
    WhiteOFF: 'rgba(255, 255, 255, .8)',
    primaryBlue: '#01ADFB',
    primaryWhite: '#FFFF',
-
+   activeCyan: '#3FFDE1',
 
 }
 export default Colors
