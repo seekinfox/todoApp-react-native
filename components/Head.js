@@ -4,6 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
 import CButton from './common/CButton';
 import Colors from '../utils/colors';
+import { sizes } from '../utils/defaultSize';
 
 export default function Head() {
   return (
@@ -38,16 +39,13 @@ const styles = StyleSheet.create({
       },
    head__innerOne: {
       flex: 2,
-      // borderWidth: 1,
-      // borderColor:'blue',
       justifyContent:'space-evenly',
       alignItems: 'flex-start',
       paddingLeft: 30
    }, 
    head__innerTwo : {
       flex: 1,
-      // borderWidth: 1,
-      // borderColor:'red',
+
       flexDirection:'row',
       justifyContent: 'flex-end',
       alignItems: 'flex-start',
@@ -55,13 +53,15 @@ const styles = StyleSheet.create({
    head__textTitle: {
       textTransform:'uppercase',
       letterSpacing: 3,
-      fontSize: 30,
+      fontSize: sizes.mainTitle,
+      //fontfamily: 'BorlowMedium',
       fontWeight: 'bold',
       color: Colors.primaryWhite
    },
    head__textSubtitle: {
+      //fontfamily: 'BorlowLight',
       fontWeight: 'bold',
-      fontSize: 23,
+      fontSize: sizes.title,
       color: Colors.BlackOFF,
       marginTop: 6,
       color: Colors.WhiteOFF,
