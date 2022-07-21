@@ -39,16 +39,13 @@ const styles = StyleSheet.create({
       },
    head__innerOne: {
       flex: 2,
-      // borderWidth: 1,
-      // borderColor:'blue',
       justifyContent:'space-evenly',
       alignItems: 'flex-start',
       paddingLeft: 30
    }, 
    head__innerTwo : {
       flex: 1,
-      // borderWidth: 1,
-      // borderColor:'red',
+
       flexDirection:'row',
       justifyContent: 'flex-end',
       alignItems: 'flex-start',
@@ -57,12 +54,12 @@ const styles = StyleSheet.create({
       textTransform:'uppercase',
       letterSpacing: 3,
       fontSize: sizes.mainTitle,
-      fontFamily: 'BorlowMedium',
+      //fontfamily: 'BorlowMedium',
       fontWeight: 'bold',
       color: Colors.primaryWhite
    },
    head__textSubtitle: {
-      fontFamily: 'BorlowLight',
+      //fontfamily: 'BorlowLight',
       fontWeight: 'bold',
       fontSize: sizes.title,
       color: Colors.BlackOFF,

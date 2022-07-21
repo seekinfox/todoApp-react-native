@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
-import { CheckBox } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import { sizes } from '../../utils/defaultSize';
 import Colors from '../../utils/colors';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,16 +14,19 @@ export default function TodoItem({item, handleRemoveItem}) {
    const handleOnChecked =()=> {
       setChecked(prev =>({...checked, item: item.key, status: !prev.status }))
    }
-   console.log(checked)
 
   return (
     <View style={styles.todoItem__container}>
-      <CheckBox
-         disabled={false}
-         value={checked.status}
-         onValueChange={handleOnChecked}
-         style={styles.todoItem__checkbox}
-      />
+      <View style={styles.todoItem__checkbox}>
+         <CButton 
+            onPress={handleOnChecked}
+            renderItem={() => 
+               <AntDesign name="checksquareo" size={26} color={
+                  (checked.item === item.key && checked.status === true) ? 
+                  Colors.WhiteOOFF : Colors.primaryWhite} 
+               />}  
+            />
+      </View>
       <Text style={styles.todoItem__text}>
          <Text style={(checked.item === item.key && checked.status === true) && styles.checkedText}>
             {item.title}
@@ -57,19 +60,17 @@ const styles = StyleSheet.create({
    todoItem__text: {
       color: Colors.WhiteOFF,
       fontSize: sizes.title,
-      fontFamily: 'BorlowMedium',
+      //fontfamily: 'BorlowMedium',
    },
    todoItem__checkbox: {
       marginRight: 15,
-      width: 30,
-      height: 30,
       opacity: .8,
       overflow:'hidden',
       color: 'white'
    },
    checkedText : {
       opacity: .2,
-      color:Colors.BlackOFF
+      color:Colors.WhiteOOFF
    },
    todoItem__removeButton : {
       alignSelf: 'flex-end',

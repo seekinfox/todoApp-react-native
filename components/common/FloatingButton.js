@@ -15,14 +15,12 @@ export default function FloatingButton({handleOpenForm}) {
 
 const styles = StyleSheet.create({
    floatingButton__container: {
-      padding: 10,
       width: 60,
       height: 60,
-      position:'fixed',
-      bottom: 50,
-      right: 30,
       backgroundColor: Colors.primaryWhite,
-      borderRadius: 30,
+      borderRadius: 50,
+      marginLeft: 30,
+      marginBottom: 20
    },
    floatingButton__innerContainer: {
       width: '100%',

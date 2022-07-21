@@ -6,7 +6,15 @@ import TodoList from '../components/TodoList'
 import FloatingButton from '../components/common/FloatingButton'
 import CreateTodo from './CreateTodo'
 import { todos } from '../utils/defaultLists'
-import uniqid from 'uniqid';
+
+export function uniqid(digits) {
+   let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXZ';
+   let uuid = [];
+   for (let i = 0; i < digits; i++) {
+       uuid.push(str[Math.floor(Math.random() * str.length)]);
+   }
+   return uuid.join('');
+}
 
 export default function TodoMain() {
    const [input, setInput] = useState("")
@@ -20,18 +28,19 @@ export default function TodoMain() {
    }
 
    const handleOnDone =()=> {
-      setTodosItems([
-         ...todosItems,
-         {
-            key: uniqid('todo-'),
-            title: input
-         }
-      ])
       if(input){
+         setTodosItems([
+            ...todosItems,
+            {
+               key: uniqid(5),
+               title: input
+            }
+         ])
          setOpenForm({
             ...openForm,
             visible: false
          })
+         setInput("")
       }
    }
    const handletextChange =(value)=> {
@@ -48,11 +57,11 @@ export default function TodoMain() {
      <View style={styles.todoMain__innerTop}>
          <Head />
          <TodoDays />
+         <FloatingButton handleOpenForm={handleOpenForm} />
       </View>
       <View style={styles.todoMain__innerBottom}>
          <TodoList todos={todosItems} handleRemoveItem={handleRemoveItem} />
       </View>
-      <FloatingButton handleOpenForm={handleOpenForm} />
       <CreateTodo 
          openForm={openForm} 
          setOpenForm={setOpenForm} 
@@ -66,7 +75,6 @@ export default function TodoMain() {
 const styles = StyleSheet.create({
    todoMain__container: {
       flex: 1,
-      display: 'relative'
    },
    todoMain__innerBottom: {
       flex: 1,

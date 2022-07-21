@@ -6,7 +6,6 @@ import { sizes } from '../utils/defaultSize'
 import CreateTodoBody from '../components/CreateTodoBody'
 
 export default function CreateTodo({openForm, setOpenForm, handletextChange, handleOnDone}) {
-   console.log(openForm)
    const handleOnCancel = () => {
       setOpenForm({
          ...openForm,
@@ -17,7 +16,6 @@ export default function CreateTodo({openForm, setOpenForm, handletextChange, han
    <Modal
       animationType={openForm.animation}
       visible={openForm.visible}
-      // visible={true}
       transparent={true}
       onRequestClose={() => setOpenForm({
          ...openForm,
@@ -56,12 +54,12 @@ const styles = StyleSheet.create({
       margin: 20
    },
    cancelText: {
-      fontFamily: 'BorlowMedium',
+      //fontfamily: 'BorlowMedium',
       color: Colors.primaryWhite,
       fontSize: sizes.button,
    },
    createTodo__title: {
-      fontFamily: 'BorlowMedium',
+      //fontfamily: 'BorlowMedium',
       color: Colors.primaryWhite,
       fontSize: sizes.mainTitle,
       letterSpacing: 2,

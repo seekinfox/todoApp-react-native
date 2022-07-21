@@ -6,7 +6,7 @@ export default function DaysTag({item}) {
    const [pressedButton, setPressedButton] = useState(0)
 
    const handlePress = (item) => {
-      console.log(item.key, pressedButton)
+      //console.log(item.key, pressedButton)
       setPressedButton(item.key)
    }
 

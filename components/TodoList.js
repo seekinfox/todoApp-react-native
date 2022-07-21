@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { View, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import TodoItem from './common/TodoItem'
 
@@ -16,7 +16,7 @@ export default function TodoList({todos, handleRemoveItem}) {
 
 const styles = StyleSheet.create({
    todoList__container: {
-      borderColor: 'red',
-      paddingHorizontal: 20,
+      flex: 1,
+      paddingHorizontal: 30,
    }
 })
