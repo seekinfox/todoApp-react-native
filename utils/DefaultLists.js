@@ -29,5 +29,21 @@ export const todos = [
    {
       key: 4,
       title:'Buy dinner'
+   },
+   {
+      key: 5,
+      title: 'Make chicken dinner'
+   },
+   {
+      key: 6,
+      title: 'Buy Macbook'
+   },
+   {
+      key: 7,
+      title: 'Watch movie'
+   },
+   {
+      key: 8,
+      title: 'Watch movie'
    }
 ]

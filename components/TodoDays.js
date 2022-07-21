@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
-import { Days } from '../utils/DefaultLists'
+import { Days } from '../utils/defaultLists'
 import DaysTag from './common/DaysTag'
 
 
