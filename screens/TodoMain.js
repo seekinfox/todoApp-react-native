@@ -6,15 +6,7 @@ import TodoList from '../components/TodoList'
 import FloatingButton from '../components/common/FloatingButton'
 import CreateTodo from './CreateTodo'
 import { todos } from '../utils/defaultLists'
-
-export function uniqid(digits) {
-   let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVXZ';
-   let uuid = [];
-   for (let i = 0; i < digits; i++) {
-       uuid.push(str[Math.floor(Math.random() * str.length)]);
-   }
-   return uuid.join('');
-}
+import { uniqid } from '../utils/utils'
 
 export default function TodoMain() {
    const [input, setInput] = useState("")
