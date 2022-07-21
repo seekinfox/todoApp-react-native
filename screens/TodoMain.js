@@ -1,18 +1,45 @@
 import { View, Text, StyleSheet, Modal } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Head from '../components/Head'
 import TodoDays from '../components/TodoDays'
 import TodoList from '../components/TodoList'
 import FloatingButton from '../components/common/FloatingButton'
 import CreateTodo from './CreateTodo'
+import { todos } from '../utils/defaultLists'
+import uniqid from 'uniqid';
 
 export default function TodoMain() {
+   const [input, setInput] = useState("")
+   const [todosItems, setTodosItems] = useState(todos)
    const [openForm, setOpenForm] = useState({
-      animation: 'slide',
-      visible: 'false',
+      animation: 'fade',
+      visible: false,
    })
    const handleOpenForm =() => {
       setOpenForm({...openForm, visible: true})
+   }
+
+   const handleOnDone =()=> {
+      setTodosItems([
+         ...todosItems,
+         {
+            key: uniqid('todo-'),
+            title: input
+         }
+      ])
+      if(input){
+         setOpenForm({
+            ...openForm,
+            visible: false
+         })
+      }
+   }
+   const handletextChange =(value)=> {
+      setInput(value)
+   }
+   const handleRemoveItem =(id)=> {
+      setTodosItems(
+         todosItems.filter(item=> item.key !== id))
    }
 
 
@@ -23,10 +50,15 @@ export default function TodoMain() {
          <TodoDays />
       </View>
       <View style={styles.todoMain__innerBottom}>
-         <TodoList />
+         <TodoList todos={todosItems} handleRemoveItem={handleRemoveItem} />
       </View>
       <FloatingButton handleOpenForm={handleOpenForm} />
-      <CreateTodo openForm={openForm} setOpenForm={setOpenForm} />
+      <CreateTodo 
+         openForm={openForm} 
+         setOpenForm={setOpenForm} 
+         handletextChange={handletextChange}
+         handleOnDone={handleOnDone}
+         />
     </View>
   )
 }

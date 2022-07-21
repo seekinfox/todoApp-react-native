@@ -4,6 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons'; 
 import CButton from './common/CButton';
 import Colors from '../utils/colors';
+import { sizes } from '../utils/defaultSize';
 
 export default function Head() {
   return (
@@ -55,13 +56,15 @@ const styles = StyleSheet.create({
    head__textTitle: {
       textTransform:'uppercase',
       letterSpacing: 3,
-      fontSize: 30,
+      fontSize: sizes.mainTitle,
+      fontFamily: 'BorlowMedium',
       fontWeight: 'bold',
       color: Colors.primaryWhite
    },
    head__textSubtitle: {
+      fontFamily: 'BorlowLight',
       fontWeight: 'bold',
-      fontSize: 23,
+      fontSize: sizes.title,
       color: Colors.BlackOFF,
       marginTop: 6,
       color: Colors.WhiteOFF,

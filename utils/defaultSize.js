@@ -1,3 +1,6 @@
 export const sizes = {
-   title: 23
+   mainTitle: 30,
+   title: 23,
+   button: 20,
+   subTitle: 22,
 }
